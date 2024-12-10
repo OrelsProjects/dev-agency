@@ -1,7 +1,5 @@
+import CalendlyLink from "@/components/calendlyLink";
 import React from "react";
-import { PopupButton } from "react-calendly";
-
-const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL as string;
 
 const Footer = () => {
   return (
@@ -56,9 +54,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold">Contact</h4>
             <ul className="mt-4 space-y-2">
               <li className="text-gray-400">orelsmail@gmail.com</li>
-              <PopupButton
-                url={calendlyUrl}
-                rootElement={document.getElementById("calendly-portal")!}
+              <CalendlyLink
                 text="Schedule a call"
                 className="text-gray-400"
               />

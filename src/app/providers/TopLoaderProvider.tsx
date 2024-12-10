@@ -1,8 +1,14 @@
 "use client";
 
 import React from "react";
-import { isMobilePhone } from "@/lib/utils/notificationUtils";
 import NextTopLoader from "nextjs-toploader";
+
+const isMobilePhone = () => {
+  if (typeof window === "undefined") return false;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+};
 
 export default function TopLoaderProvider() {
   return (

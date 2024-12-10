@@ -1,6 +1,6 @@
 import type { Viewport } from "next";
 import "./globals.css";
-import AuthProvider from "@/app/providers/AuthProvider";
+import "react-toastify/dist/ReactToastify.css";
 import ClientTrackersProvider from "@/app/providers/ClientTrackersProvider";
 import SessionWrapper from "@/app/providers/SessionWrapper";
 import StoreProvider from "@/app/providers/StoreProvider";
@@ -64,7 +64,6 @@ export const metadata = {
 };
 
 export default function Layout({ children }: RootLayoutProps) {
-  initLogger();
 
   return (
     <html lang="en" className={Poppins.className}>
@@ -85,14 +84,11 @@ export default function Layout({ children }: RootLayoutProps) {
           }
         >
           <StoreProvider>
-            <SessionWrapper>
-              <ThemeProvider>
-                <TopLoaderProvider />
-                {children}
-
-                <ClientTrackersProvider />
-              </ThemeProvider>
-            </SessionWrapper>
+            <ThemeProvider>
+              <TopLoaderProvider />
+              {children}
+              {/* <ClientTrackersProvider /> */}
+            </ThemeProvider>
           </StoreProvider>
         </Suspense>
         <div id="calendly-portal" />

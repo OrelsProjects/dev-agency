@@ -4,7 +4,7 @@ import usePayments from "@/lib/hooks/usePayments";
 import { Product } from "@/models/payment";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import { PopupButton } from "react-calendly";
+
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import confetti from "canvas-confetti";
@@ -12,10 +12,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "react-toastify";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import CalendlyLink from "@/components/calendlyLink";
 
-const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL as string;
-
-const SuccessPage = ({ params }: { params: { orderId: string } }) => {
+const SuccessPage = () => {
   const searchParams = useSearchParams();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
@@ -37,7 +36,7 @@ const SuccessPage = ({ params }: { params: { orderId: string } }) => {
           origin: { y: 0.6 },
         });
       })
-      .catch((error) => toast.error("Error fetching product"))
+      .catch(() => toast.error("Error fetching product"))
       .finally(() => {
         setLoading(false);
         loadingRef.current = false;
@@ -98,9 +97,7 @@ const SuccessPage = ({ params }: { params: { orderId: string } }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <PopupButton
-                  url={calendlyUrl}
-                  rootElement={document.getElementById("calendly-portal")!}
+                <CalendlyLink
                   text="Let's talk"
                   className="w-full bg-primary text-primary-foreground px-4 py-2 rounded-md flex items-center justify-center space-x-2 transition-colors hover:bg-primary/90"
                 />
