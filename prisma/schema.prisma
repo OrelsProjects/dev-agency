@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Payment {
+  id              String  @id @default(auto()) @map("_id") @db.ObjectId // MongoDB uses ObjectId as the default id type
+  email           String
+  priceId         String
+  sessionId       String  @unique
+  productId       String
+  productName     String
+  amountReceived  Int
+  currency        String
+  status          String
+  paymentMethodId String?
+
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  UserOrders UserOrders[]
+
+  @@map("payments")
+}
+
+model UserOrders {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId // MongoDB uses ObjectId as the default id type
+  productId String
+  paymentId String? @db.ObjectId
+  email     String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  payment Payment? @relation(fields: [paymentId], references: [id])
+
+  @@map("user_orders")
+}
