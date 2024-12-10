@@ -9,13 +9,10 @@ const appName = process.env.NEXT_PUBLIC_APP_NAME as string;
 
 export async function GET(req: NextRequest) {
   try {
-    console.log("Getting products");
     const stripe = getStripeInstance();
     const { data: stripeProducts } = await stripe.products.list();
 
     const products: Product[] = [];
-
-    console.log("got stripe products", stripeProducts);
 
     const appProducts = stripeProducts
       .filter((stripeProduct) => stripeProduct.active)
@@ -25,11 +22,7 @@ export async function GET(req: NextRequest) {
           .includes(appName.toLowerCase())
       );
 
-    console.log("got app products", appProducts);
-
     const userOrders = await prisma.userOrders.findMany();
-
-    console.log("got user orders", userOrders);
 
     for (const stripeProduct of appProducts) {
       const { data: stripePrices } = await stripe.prices.list({
@@ -75,8 +68,6 @@ export async function GET(req: NextRequest) {
     const productsSortedByPrice = products.sort(
       (a, b) => b.priceStructure.price - a.priceStructure.price
     );
-
-    console.log("got products", productsSortedByPrice);
 
     return NextResponse.json(productsSortedByPrice, { status: 200 });
   } catch (error: any) {
