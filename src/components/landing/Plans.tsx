@@ -52,7 +52,7 @@ const Plans = () => {
   };
 
   return (
-    <section id="plans" className="py-20 bg-white">
+    <section id="plans" className="py-20 bg-background">
       <div className="h-full max-w-7xl flex flex-col gap-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-4xl font-bold text-gray-900">
@@ -84,7 +84,7 @@ const Plans = () => {
                   key={product.id}
                   className={cn("relative rounded-2xl", {
                     "shadow-xl border-2 border-primary": product.recommended,
-                    "bg-white text-gray-900 border border-gray-200":
+                    "bg-background text-gray-900 border border-gray-200":
                       !product.recommended,
                     "grayscale opacity-50": product.unavailable,
                   })}

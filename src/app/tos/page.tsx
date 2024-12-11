@@ -6,7 +6,7 @@ const POLICY_EFFECTIVE_DATE = "07 Nov 2024";
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="p-6 max-w-3xl mx-auto bg-white rounded-lg shadow-md">
+    <div className="p-6 max-w-3xl mx-auto bg-background rounded-lg shadow-md">
       <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
 
       <section className="mb-6">
@@ -14,7 +14,7 @@ const PrivacyPolicy: React.FC = () => {
           Your privacy is important to us. It is {COMPANY_NAME}&apos;s policy to
           respect your privacy regarding any information we may collect from you
           across our website,{" "}
-          <a href={WEBSITE_URL} className="text-blue-500 underline">
+          <a href={WEBSITE_URL} className="text-green-500 underline">
             {WEBSITE_URL}
           </a>
           , and other sites we own and operate.

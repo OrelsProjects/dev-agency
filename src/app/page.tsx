@@ -8,15 +8,16 @@ import Process from "@/components/landing/Process";
 import Testimonials from "@/components/landing/Testimonials";
 import WhyMe from "@/components/landing/WhyMe";
 import Navbar from "@/components/landing/Navbar";
-import { Contact } from "lucide-react";
+import { ServiceComparison } from "@/components/landing/ServiceComparison";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <main>
         <Hero />
         <WhyMe />
+        <ServiceComparison/>
         <Portfolio />
         <Plans />
         <Process />

@@ -44,7 +44,7 @@ const features = [
 
 const WhyMe = () => {
   return (
-    <section id="why-me" className="py-20 bg-white">
+    <section id="why-me" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center">
@@ -62,17 +62,17 @@ const WhyMe = () => {
             return (
               <FadeIn key={index} delay={index * 0.1}>
                 <motion.div
-                  className="relative h-full bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
+                  className="relative h-full bg-background p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
                   whileHover={{ y: -5 }}
                 >
-                  {/* <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300 blur" /> */}
-                  <div className="relative bg-white p-6 rounded-xl">
+                  {/* <div className="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-green-400 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300 blur" /> */}
+                  <div className="relative bg-background p-6 rounded-xl">
                     <motion.div
-                      className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center"
+                      className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center"
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <Icon className="h-6 w-6 text-blue-600" />
+                      <Icon className="h-6 w-6 text-green-600" />
                     </motion.div>
                     <h3 className="mt-4 text-xl font-semibold text-gray-900">
                       {feature.title}
@@ -86,7 +86,7 @@ const WhyMe = () => {
         </div>
 
         <FadeIn delay={0.6}>
-          <div className="mt-16 bg-blue-50 rounded-2xl p-8 lg:p-12">
+          <div className="mt-16 bg-green-50 rounded-2xl p-8 lg:p-12">
             <div className="lg:flex lg:items-center lg:justify-between">
               <div className="lg:w-2/3">
                 <h3 className="text-2xl font-bold text-gray-900">
@@ -100,7 +100,7 @@ const WhyMe = () => {
               <div className="mt-8 lg:mt-0">
                 <motion.a
                   href="#plans"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-green-600 hover:bg-green-700 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

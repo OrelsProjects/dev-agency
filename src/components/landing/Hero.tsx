@@ -7,7 +7,7 @@ import { experienceYears } from '@/lib/utils/date';
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white z-0" />
+      <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-white z-0" />
       <motion.div 
         className="absolute inset-0 opacity-30 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px] z-0"
         animate={{
@@ -26,7 +26,7 @@ const Hero = () => {
             <FadeIn>
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Get Your Product Built Right
-                <span className="block text-blue-600">By Someone Who Cares</span>
+                <span className="block text-green-600">By Someone Who Cares</span>
               </h1>
             </FadeIn>
             
@@ -40,7 +40,7 @@ const Hero = () => {
               <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                 <motion.a
                   href="#plans"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-green-600 hover:bg-green-700 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -49,7 +49,7 @@ const Hero = () => {
                 </motion.a>
                 <motion.a
                   href="#portfolio"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-full text-gray-700 bg-background hover:bg-gray-50 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
